@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:hr="http://mycompany.com/hr/schemas"
+        elementFormDefault="qualified"
+        targetNamespace="http://mycompany.com/hr/schemas">
+    <xs:element xmlns:exem="http://mycompany.com/hr/schemas" name="HolidayRequest" type="exem:HolidayRequest"/>
+    
+    <xs:complexType name="HolidayRequest">
+	    <xs:sequence>
+	      <xs:element type="exem:HolidayType" name="etudiant" maxOccurs="unbounded" minOccurs="1" xmlns:exem="http://mycompany.com/hr/schemas"/>
+	      <xs:element type="exem:EmployeeType" name="matiere" maxOccurs="unbounded" minOccurs="1" xmlns:exem="http://mycompany.com/hr/schemas"/>     
+	    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HolidayType">
+    <xs:all>
+      <xs:element name="StartDate">
+        <xs:simpleType>
+          <xs:restriction base="xs:date">
+            <xs:enumeration value="2006-07-03"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EndDate">
+        <xs:simpleType>
+          <xs:restriction base="xs:date">
+            <xs:enumeration value="2006-07-07"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="EmployeeType">
+    <xs:all>
+      <xs:element name="Number">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="42"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FirstName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Arjen"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LastName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Poutsma"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
